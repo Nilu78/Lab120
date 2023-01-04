@@ -1,20 +1,19 @@
 class Main {
   public static void main(String[] args){
-    System.out.println(isPalindrome("A man, a plan, a canal: Panama"));
+    CalculatorWithMemory calc = new CalculatorWithMemory();
+      
+    calc.accumulator = 10;
+    calc.save();
+    calc.accumulator = 20; 
+    calc.recall();
     
-  } 
-  
-  public static boolean isPalindrome(String str){
+    System.out.println(calc.accumulator);//output: 10
+    System.out.println(calc.getMemory());//output: 10
+
+    System.out.println(calc.getMemory());//output: 0
     
-    StringBuilder sb = new StringBuilder(str);
-    str=str.toLowerCase().replaceAll("[^a-z]", "");
-    sb=new StringBuilder(str).reverse();
-    if(sb.toString().equalsIgnoreCase(str))
-      return true;
-    else
-      return false;
-    
-  
+     calc.clearMemory();
+    System.out.println(calc.getMemory());
   }
     
     

@@ -1,28 +1,35 @@
 public class CalculatorWithMemory extends Calculator {
   
-  private double accumuator = 6;
+  private double memory;
+
+
+  public CalculatorWithMemory() {
+    memory = 0;
+  } 
   
-  public double add(double x, double y) {
-    accumuator += x + y;
-    return accumuator;
+  public void save() {
+    memory = accumulator;
   }
   
-  public double subtract(double x, double y) {
-    accumuator -= x - y;
-    return accumuator;
+  public void recall(){
+    accumulator = memory;
   }
+    public void clearMemory(){  
+      memory = 0;
+    }
+    public double getMemory(){
+      return memory;
+    }
+      
+    }
   
-  public double multiply(double x, double y) {
-    accumuator *= x * y;
-    return accumuator;
-  }
   
   
   
   
     
     
-  }
+  
 
   
 
